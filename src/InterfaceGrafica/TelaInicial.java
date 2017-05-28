@@ -324,7 +324,7 @@ public class TelaInicial extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Carta 2");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(210, 280, 50, 17);
+        jLabel3.setBounds(230, 280, 50, 17);
 
         OutraCarta.setText("Outra Carta");
         OutraCarta.addActionListener(new java.awt.event.ActionListener() {
@@ -333,7 +333,7 @@ public class TelaInicial extends javax.swing.JFrame {
             }
         });
         getContentPane().add(OutraCarta);
-        OutraCarta.setBounds(610, 530, 100, 30);
+        OutraCarta.setBounds(610, 520, 100, 30);
 
         PararJogada.setText("Parar");
         PararJogada.addActionListener(new java.awt.event.ActionListener() {
@@ -342,13 +342,13 @@ public class TelaInicial extends javax.swing.JFrame {
             }
         });
         getContentPane().add(PararJogada);
-        PararJogada.setBounds(610, 460, 100, 30);
+        PararJogada.setBounds(610, 470, 100, 30);
 
         jLabel4Resultado.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4Resultado.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4Resultado.setText("Carta 3");
         getContentPane().add(jLabel4Resultado);
-        jLabel4Resultado.setBounds(370, 280, 50, 17);
+        jLabel4Resultado.setBounds(380, 280, 50, 17);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -360,7 +360,7 @@ public class TelaInicial extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Carta 5");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(660, 280, 50, 17);
+        jLabel5.setBounds(680, 280, 50, 17);
 
         BotaoIniciar.setText("Iniciar Jogo");
         BotaoIniciar.addActionListener(new java.awt.event.ActionListener() {
@@ -369,7 +369,7 @@ public class TelaInicial extends javax.swing.JFrame {
             }
         });
         getContentPane().add(BotaoIniciar);
-        BotaoIniciar.setBounds(70, 460, 110, 30);
+        BotaoIniciar.setBounds(70, 470, 110, 30);
 
         ReiniciarJogo.setText("Reiniciar Jogo");
         ReiniciarJogo.addActionListener(new java.awt.event.ActionListener() {
@@ -395,7 +395,7 @@ public class TelaInicial extends javax.swing.JFrame {
         NomeJogador1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         NomeJogador1.setForeground(new java.awt.Color(255, 255, 255));
         getContentPane().add(NomeJogador1);
-        NomeJogador1.setBounds(390, 460, 150, 30);
+        NomeJogador1.setBounds(370, 460, 230, 30);
 
         Status.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         Status.setForeground(new java.awt.Color(255, 255, 255));
@@ -409,7 +409,7 @@ public class TelaInicial extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(70, 530, 110, 30);
+        jButton1.setBounds(70, 520, 110, 30);
 
         DisplayAposta.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         DisplayAposta.setForeground(new java.awt.Color(255, 255, 255));
@@ -442,6 +442,7 @@ public class TelaInicial extends javax.swing.JFrame {
                     Naipe = NaipeFunction(NaipeNumeroJogador);
                     baralho[contadorMaquina] = MaoJogador + Naipe;
                     PedeOutraCarta = RetornaCarta(baralho[contadorMaquina]);
+                    cartavalida = CartaRepetida(baralho, MaoJogador, Naipe);
                     contadorMaquina = contadorMaquina + 1;
                     break;
                 case 11:
@@ -449,6 +450,7 @@ public class TelaInicial extends javax.swing.JFrame {
                     cartasjogador = cartasjogador + 1;
                     baralho[contadorMaquina] = 10 + Naipe;
                     PedeOutraCarta = RetornaCarta(baralho[contadorMaquina]);
+                    cartavalida = CartaRepetida(baralho, MaoJogador, Naipe);
                     contadorMaquina = contadorMaquina + 1;
                     break;
                 case 12:
@@ -456,6 +458,7 @@ public class TelaInicial extends javax.swing.JFrame {
                     cartasjogador = cartasjogador + 1;
                     baralho[contadorMaquina] = 10 + Naipe;
                     PedeOutraCarta = RetornaCarta(baralho[contadorMaquina]);
+                    cartavalida = CartaRepetida(baralho, MaoJogador, Naipe);
                     contadorMaquina = contadorMaquina + 1;
                     break;
                 case 13:
@@ -463,6 +466,7 @@ public class TelaInicial extends javax.swing.JFrame {
                     cartasjogador = cartasjogador + 1;
                     baralho[contadorMaquina] = 10 + Naipe;
                     PedeOutraCarta = RetornaCarta(baralho[contadorMaquina]);
+                    cartavalida = CartaRepetida(baralho, MaoJogador, Naipe);
                     contadorMaquina = contadorMaquina + 1;
                     break;
                 default:
@@ -472,11 +476,13 @@ public class TelaInicial extends javax.swing.JFrame {
                     NaipeNumeroMaquina = mesa.nextInt(3);
                     baralho[contadorMaquina] = MaoJogador + Naipe;
                     PedeOutraCarta = RetornaCarta(baralho[contadorMaquina]);
+                    cartavalida = CartaRepetida(baralho, MaoJogador, Naipe);
                     contadorMaquina = contadorMaquina + 1;
                     break;
             }
 
         }
+        System.out.println(cartavalida);
         if (contadorMaquina == 3) {
             ImagemCarta3.setIcon(PedeOutraCarta);
 
@@ -548,17 +554,17 @@ public class TelaInicial extends javax.swing.JFrame {
             } else {
                 JOptionPane.showMessageDialog(null, "A maquina passou");
             }
-            System.out.println("a maquina tem " + MaoMesaNumero);
+            System.out.println("A maquina tem " + MaoMesaNumero);
 
         }
 
-        if (MaoJogadorNumero > 21) {
+        if (MaoJogadorNumero > 21 && MaoMesaNumero <=21) {
             JOptionPane.showMessageDialog(null, "Você estourou com " + MaoJogadorNumero + " na mão");
             ReiniciarJogoActionPerformed(evt);
 
         }
-        if (MaoMesaNumero > 21) {
-            JOptionPane.showMessageDialog(null, "Você Ganhou, a mesa estourou com " + MaoMesaNumero + " na mão");
+        if (MaoMesaNumero > 21 && MaoJogadorNumero <=21) {
+            JOptionPane.showMessageDialog(null, "Você Ganhou, a mesa estourou com " + MaoMesaNumero + " na mão. Você faturou R$" + ValorAposta);
             ReiniciarJogoActionPerformed(evt);
 
         }
@@ -571,7 +577,7 @@ public class TelaInicial extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Você Perdeu com " + MaoJogadorNumero + " na mão e a mesa com " + MaoMesaNumero);
 
         }
-        
+
         if (MaoMesaNumero == 21 && MaoJogadorNumero == 21) {
             JOptionPane.showMessageDialog(null, "Ambos empataram com 21");
 
@@ -583,7 +589,7 @@ public class TelaInicial extends javax.swing.JFrame {
 
         if (cartasmaquina == 5) {
 
-            JOptionPane.showMessageDialog(null, "A maquina já tem 5 cartas e aguarda sua jogada");
+            JOptionPane.showMessageDialog(null, "A máquina já tem 5 cartas e aguarda sua jogada");
         }
 
     }//GEN-LAST:event_OutraCartaActionPerformed
@@ -599,7 +605,7 @@ public class TelaInicial extends javax.swing.JFrame {
                 if (Jogador1.equals("") || Jogador1.equals(" ") || Jogador1.equals("   ")) {
                     JOptionPane.showMessageDialog(null, "Nome do Jogador inválido");
                 } else {
-                    NomeJogador1.setText(String.valueOf("Jogador "+Jogador1));
+                    NomeJogador1.setText(String.valueOf("Jogador " + Jogador1));
                     nomejogadorvalido = true;
                 }
             }
@@ -739,6 +745,7 @@ public class TelaInicial extends javax.swing.JFrame {
                     contadorMaquina = contadorMaquina + 1;
                     break;
             }
+            System.out.println(cartavalida);
             Status.setText(String.valueOf("Sua mão tem " + MaoJogadorNumero));
             ImagemCarta1.setIcon(carta1);
             ImagemCarta2.setIcon(carta2);
@@ -760,6 +767,7 @@ public class TelaInicial extends javax.swing.JFrame {
     private void ReiniciarJogoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReiniciarJogoActionPerformed
 
         iniciarjogo = true;
+        nomejogadorvalido = false;
 
         cartasjogador = 0;
         cartasmaquina = 0;
@@ -772,9 +780,8 @@ public class TelaInicial extends javax.swing.JFrame {
 
         MaoJogadorNumero = 0;
         MaoMesaNumero = 0;
-        //Jogador1 = JOptionPane.showInputDialog("Digite o nome do Jogador");
 
-        NomeJogador1.setText(String.valueOf(" "));
+       NomeJogador1.setText(String.valueOf(""));
 
         for (int i = 0; i < baralho.length; i++) {
             baralho[i] = " ";
@@ -792,7 +799,7 @@ public class TelaInicial extends javax.swing.JFrame {
 
         if (iniciarjogo == false) {
 
-            while(MaoMesaNumero < 18 && cartasmaquina < 5) {
+            while (MaoMesaNumero < 18 && cartasmaquina < 5) {
 
                 maquinapedeoutra = mesa.nextInt(4) + 1;
 
