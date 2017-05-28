@@ -241,7 +241,7 @@ public class TelaInicial extends javax.swing.JFrame {
 
     static boolean fimJogo = true;
 
-    static boolean iniciarjogo = true;
+    static boolean iniciarjogo = false;
 
     static boolean outracarta = false;
 
@@ -432,171 +432,174 @@ public class TelaInicial extends javax.swing.JFrame {
 
     private void OutraCartaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OutraCartaActionPerformed
 
-        if (cartasjogador < 5) {
-            MaoJogador = mesa.nextInt(13) + 1;
-            switch (MaoJogador) {
-                case 1:
-                    MaoJogadorNumero = MaoJogadorNumero + 1;
-                    NaipeNumeroJogador = mesa.nextInt(3);
-                    cartasjogador = cartasjogador + 1;
-                    Naipe = NaipeFunction(NaipeNumeroJogador);
-                    baralho[contadorMaquina] = MaoJogador + Naipe;
-                    PedeOutraCarta = RetornaCarta(baralho[contadorMaquina]);
-                    cartavalida = CartaRepetida(baralho, MaoJogador, Naipe);
-                    contadorMaquina = contadorMaquina + 1;
-                    break;
-                case 11:
-                    MaoJogadorNumero = MaoJogadorNumero + 10;
-                    cartasjogador = cartasjogador + 1;
-                    baralho[contadorMaquina] = 10 + Naipe;
-                    PedeOutraCarta = RetornaCarta(baralho[contadorMaquina]);
-                    cartavalida = CartaRepetida(baralho, MaoJogador, Naipe);
-                    contadorMaquina = contadorMaquina + 1;
-                    break;
-                case 12:
-                    MaoJogadorNumero = MaoJogadorNumero + 10;
-                    cartasjogador = cartasjogador + 1;
-                    baralho[contadorMaquina] = 10 + Naipe;
-                    PedeOutraCarta = RetornaCarta(baralho[contadorMaquina]);
-                    cartavalida = CartaRepetida(baralho, MaoJogador, Naipe);
-                    contadorMaquina = contadorMaquina + 1;
-                    break;
-                case 13:
-                    MaoJogadorNumero = MaoJogadorNumero + 10;
-                    cartasjogador = cartasjogador + 1;
-                    baralho[contadorMaquina] = 10 + Naipe;
-                    PedeOutraCarta = RetornaCarta(baralho[contadorMaquina]);
-                    cartavalida = CartaRepetida(baralho, MaoJogador, Naipe);
-                    contadorMaquina = contadorMaquina + 1;
-                    break;
-                default:
-                    MaoJogadorNumero = MaoJogadorNumero + MaoJogador;
-                    cartasjogador = cartasjogador + 1;
-                    NaipeNumeroJogador = mesa.nextInt(3);
-                    NaipeNumeroMaquina = mesa.nextInt(3);
-                    baralho[contadorMaquina] = MaoJogador + Naipe;
-                    PedeOutraCarta = RetornaCarta(baralho[contadorMaquina]);
-                    cartavalida = CartaRepetida(baralho, MaoJogador, Naipe);
-                    contadorMaquina = contadorMaquina + 1;
-                    break;
-            }
+        if (iniciarjogo == true) {
 
-        }
-        System.out.println(cartavalida);
-        if (contadorMaquina == 3) {
-            ImagemCarta3.setIcon(PedeOutraCarta);
-
-        } else if (contadorMaquina == 4) {
-            ImagemCarta4.setIcon(PedeOutraCarta);
-
-        } else if (contadorMaquina == 5) {
-            ImagemCarta5.setIcon(PedeOutraCarta);
-
-        }
-
-        Status.setText(String.valueOf("Sua mão tem " + MaoJogadorNumero));
-
-        if (MaoMesaNumero < 18 && cartasmaquina < 5) {
-
-            maquinapedeoutra = mesa.nextInt(4) + 1;
-
-            if (maquinapedeoutra == 1 || maquinapedeoutra == 2) {
-                MaoMesaoutracarta = mesa.nextInt(13) + 1;
-                JOptionPane.showMessageDialog(null, "A maquina pediu outra carta");
-
-                switch (MaoMesaoutracarta) {
+            if (cartasjogador < 5) {
+                MaoJogador = mesa.nextInt(13) + 1;
+                switch (MaoJogador) {
                     case 1:
-                        MaoMesaNumero = MaoMesaNumero + 1;
-                        NaipeNumeroMaquina = mesa.nextInt(3);
-                        cartasmaquina = cartasmaquina + 1;
-                        NaipeNumeroMaquina = mesa.nextInt(3);
-                        Naipe = NaipeFunction(NaipeNumeroMaquina);
-                        baralhoMesa[contadorMesa] = MaoMesaoutracarta + Naipe;
-                        contadorMesa = contadorMesa + 1;
+                        MaoJogadorNumero = MaoJogadorNumero + 1;
+                        NaipeNumeroJogador = mesa.nextInt(3);
+                        cartasjogador = cartasjogador + 1;
+                        Naipe = NaipeFunction(NaipeNumeroJogador);
+                        baralho[contadorMaquina] = MaoJogador + Naipe;
+                        PedeOutraCarta = RetornaCarta(baralho[contadorMaquina]);
+                        cartavalida = CartaRepetida(baralho, MaoJogador, Naipe);
+                        contadorMaquina = contadorMaquina + 1;
                         break;
                     case 11:
-                        MaoMesaNumero = MaoMesaNumero + 10;
-                        NaipeNumeroMaquina = mesa.nextInt(3);
-                        cartasmaquina = cartasmaquina + 1;
-                        NaipeNumeroMaquina = mesa.nextInt(3);
-                        Naipe = NaipeFunction(NaipeNumeroMaquina);
-                        baralhoMesa[contadorMesa] = 10 + Naipe;
-                        contadorMesa = contadorMesa + 1;
+                        MaoJogadorNumero = MaoJogadorNumero + 10;
+                        cartasjogador = cartasjogador + 1;
+                        baralho[contadorMaquina] = 10 + Naipe;
+                        PedeOutraCarta = RetornaCarta(baralho[contadorMaquina]);
+                        cartavalida = CartaRepetida(baralho, MaoJogador, Naipe);
+                        contadorMaquina = contadorMaquina + 1;
                         break;
                     case 12:
-                        MaoMesaNumero = MaoMesaNumero + 10;
-                        NaipeNumeroMaquina = mesa.nextInt(3);
-                        cartasmaquina = cartasmaquina + 1;
-                        NaipeNumeroMaquina = mesa.nextInt(3);
-                        Naipe = NaipeFunction(NaipeNumeroMaquina);
-                        baralhoMesa[contadorMesa] = 10 + Naipe;
-                        contadorMesa = contadorMesa + 1;
+                        MaoJogadorNumero = MaoJogadorNumero + 10;
+                        cartasjogador = cartasjogador + 1;
+                        baralho[contadorMaquina] = 10 + Naipe;
+                        PedeOutraCarta = RetornaCarta(baralho[contadorMaquina]);
+                        cartavalida = CartaRepetida(baralho, MaoJogador, Naipe);
+                        contadorMaquina = contadorMaquina + 1;
                         break;
                     case 13:
-                        MaoMesaNumero = MaoMesaNumero + 10;
-                        NaipeNumeroMaquina = mesa.nextInt(3);
-                        cartasmaquina = cartasmaquina + 1;
-                        NaipeNumeroMaquina = mesa.nextInt(3);
-                        Naipe = NaipeFunction(NaipeNumeroMaquina);
-                        baralhoMesa[contadorMesa] = 10 + Naipe;
-                        contadorMesa = contadorMesa + 1;
+                        MaoJogadorNumero = MaoJogadorNumero + 10;
+                        cartasjogador = cartasjogador + 1;
+                        baralho[contadorMaquina] = 10 + Naipe;
+                        PedeOutraCarta = RetornaCarta(baralho[contadorMaquina]);
+                        cartavalida = CartaRepetida(baralho, MaoJogador, Naipe);
+                        contadorMaquina = contadorMaquina + 1;
                         break;
                     default:
-                        MaoMesaNumero = MaoMesaNumero + MaoMesaoutracarta;
+                        MaoJogadorNumero = MaoJogadorNumero + MaoJogador;
+                        cartasjogador = cartasjogador + 1;
+                        NaipeNumeroJogador = mesa.nextInt(3);
                         NaipeNumeroMaquina = mesa.nextInt(3);
-                        cartasmaquina = cartasmaquina + 1;
-                        NaipeNumeroMaquina = mesa.nextInt(3);
-                        Naipe = NaipeFunction(NaipeNumeroMaquina);
-                        baralhoMesa[contadorMesa] = MaoMesaoutracarta + Naipe;
-                        contadorMesa = contadorMesa + 1;
+                        baralho[contadorMaquina] = MaoJogador + Naipe;
+                        PedeOutraCarta = RetornaCarta(baralho[contadorMaquina]);
+                        cartavalida = CartaRepetida(baralho, MaoJogador, Naipe);
+                        contadorMaquina = contadorMaquina + 1;
                         break;
                 }
-            } else {
-                JOptionPane.showMessageDialog(null, "A maquina passou");
+
             }
-            System.out.println("A maquina tem " + MaoMesaNumero);
+            System.out.println(cartavalida);
+            if (contadorMaquina == 3) {
+                ImagemCarta3.setIcon(PedeOutraCarta);
 
-        }
+            } else if (contadorMaquina == 4) {
+                ImagemCarta4.setIcon(PedeOutraCarta);
 
-        if (MaoJogadorNumero > 21 && MaoMesaNumero <=21) {
-            JOptionPane.showMessageDialog(null, "Você estourou com " + MaoJogadorNumero + " na mão");
-            ReiniciarJogoActionPerformed(evt);
+            } else if (contadorMaquina == 5) {
+                ImagemCarta5.setIcon(PedeOutraCarta);
 
-        }
-        if (MaoMesaNumero > 21 && MaoJogadorNumero <=21) {
-            JOptionPane.showMessageDialog(null, "Você Ganhou, a mesa estourou com " + MaoMesaNumero + " na mão. Você faturou R$" + ValorAposta);
-            ReiniciarJogoActionPerformed(evt);
+            }
 
-        }
+            Status.setText(String.valueOf("Sua mão tem " + MaoJogadorNumero));
 
-        if (MaoJogadorNumero == 21 && MaoMesaNumero < 21) {
-            JOptionPane.showMessageDialog(null, "Você GANHOU com " + MaoJogadorNumero + " na mão. Você faturou R$" + ValorAposta);
+            if (MaoMesaNumero < 18 && cartasmaquina < 5) {
 
-        }
-        if (MaoMesaNumero == 21 && MaoJogadorNumero < 21) {
-            JOptionPane.showMessageDialog(null, "Você Perdeu com " + MaoJogadorNumero + " na mão e a mesa com " + MaoMesaNumero);
+                maquinapedeoutra = mesa.nextInt(4) + 1;
 
-        }
+                if (maquinapedeoutra == 1 || maquinapedeoutra == 2) {
+                    MaoMesaoutracarta = mesa.nextInt(13) + 1;
+                    JOptionPane.showMessageDialog(null, "A Mesa pediu outra carta");
 
-        if (MaoMesaNumero == 21 && MaoJogadorNumero == 21) {
-            JOptionPane.showMessageDialog(null, "Ambos empataram com 21");
+                    switch (MaoMesaoutracarta) {
+                        case 1:
+                            MaoMesaNumero = MaoMesaNumero + 1;
+                            NaipeNumeroMaquina = mesa.nextInt(3);
+                            cartasmaquina = cartasmaquina + 1;
+                            NaipeNumeroMaquina = mesa.nextInt(3);
+                            Naipe = NaipeFunction(NaipeNumeroMaquina);
+                            baralhoMesa[contadorMesa] = MaoMesaoutracarta + Naipe;
+                            contadorMesa = contadorMesa + 1;
+                            break;
+                        case 11:
+                            MaoMesaNumero = MaoMesaNumero + 10;
+                            NaipeNumeroMaquina = mesa.nextInt(3);
+                            cartasmaquina = cartasmaquina + 1;
+                            NaipeNumeroMaquina = mesa.nextInt(3);
+                            Naipe = NaipeFunction(NaipeNumeroMaquina);
+                            baralhoMesa[contadorMesa] = 10 + Naipe;
+                            contadorMesa = contadorMesa + 1;
+                            break;
+                        case 12:
+                            MaoMesaNumero = MaoMesaNumero + 10;
+                            NaipeNumeroMaquina = mesa.nextInt(3);
+                            cartasmaquina = cartasmaquina + 1;
+                            NaipeNumeroMaquina = mesa.nextInt(3);
+                            Naipe = NaipeFunction(NaipeNumeroMaquina);
+                            baralhoMesa[contadorMesa] = 10 + Naipe;
+                            contadorMesa = contadorMesa + 1;
+                            break;
+                        case 13:
+                            MaoMesaNumero = MaoMesaNumero + 10;
+                            NaipeNumeroMaquina = mesa.nextInt(3);
+                            cartasmaquina = cartasmaquina + 1;
+                            NaipeNumeroMaquina = mesa.nextInt(3);
+                            Naipe = NaipeFunction(NaipeNumeroMaquina);
+                            baralhoMesa[contadorMesa] = 10 + Naipe;
+                            contadorMesa = contadorMesa + 1;
+                            break;
+                        default:
+                            MaoMesaNumero = MaoMesaNumero + MaoMesaoutracarta;
+                            NaipeNumeroMaquina = mesa.nextInt(3);
+                            cartasmaquina = cartasmaquina + 1;
+                            NaipeNumeroMaquina = mesa.nextInt(3);
+                            Naipe = NaipeFunction(NaipeNumeroMaquina);
+                            baralhoMesa[contadorMesa] = MaoMesaoutracarta + Naipe;
+                            contadorMesa = contadorMesa + 1;
+                            break;
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(null, "A Mesa passou");
+                }
+                System.out.println("A Mesa tem " + MaoMesaNumero);
 
-        }
+                if (MaoJogadorNumero > 21 && MaoMesaNumero <= 21) {
+                    JOptionPane.showMessageDialog(null, "Você estourou com " + MaoJogadorNumero + " na mão");
+                    ReiniciarJogoActionPerformed(evt);
 
-        if (cartasjogador == 5) {
-            JOptionPane.showMessageDialog(null, "Você já tem 5 cartas");
-        }
+                }
+                if (MaoMesaNumero > 21 && MaoJogadorNumero <= 21) {
+                    JOptionPane.showMessageDialog(null, "Você Ganhou, a mesa estourou com " + MaoMesaNumero + " na mão. Você faturou R$" + ValorAposta);
+                    ReiniciarJogoActionPerformed(evt);
 
-        if (cartasmaquina == 5) {
+                }
 
-            JOptionPane.showMessageDialog(null, "A máquina já tem 5 cartas e aguarda sua jogada");
-        }
+                if (MaoJogadorNumero == 21 && MaoMesaNumero < 21) {
+                    JOptionPane.showMessageDialog(null, "Você GANHOU com " + MaoJogadorNumero + " na mão. Você faturou R$" + ValorAposta);
+
+                }
+                if (MaoMesaNumero == 21 && MaoJogadorNumero < 21) {
+                    JOptionPane.showMessageDialog(null, "Você Perdeu com " + MaoJogadorNumero + " na mão e a mesa com " + MaoMesaNumero);
+
+                }
+
+                if (MaoMesaNumero == 21 && MaoJogadorNumero == 21) {
+                    JOptionPane.showMessageDialog(null, "Ambos empataram com 21");
+
+                }
+
+                if (cartasjogador == 5) {
+                    JOptionPane.showMessageDialog(null, "Você já tem 5 cartas");
+                }
+
+                if (cartasmaquina == 5) {
+
+                    JOptionPane.showMessageDialog(null, "A Mesa já tem 5 cartas e aguarda sua jogada");
+                }
+
+            }
+
 
     }//GEN-LAST:event_OutraCartaActionPerformed
-
+    }
     private void BotaoIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoIniciarActionPerformed
 
-        if (iniciarjogo == true) {
+        if (iniciarjogo == false) {
 
             while (nomejogadorvalido == false) {
 
@@ -675,7 +678,7 @@ public class TelaInicial extends javax.swing.JFrame {
             }
 
             Status.setText(String.valueOf("Sua mão tem " + MaoJogadorNumero));
-            System.out.println("mesa tirou um " + MaoMesaNumero);
+            System.out.println("Mesa tirou um " + MaoMesaNumero);
 
             //CARTA 2
             MaoJogador = mesa.nextInt(13) + 1;
@@ -752,7 +755,7 @@ public class TelaInicial extends javax.swing.JFrame {
             ImagemCarta3.setIcon(carta3);
             ImagemCarta4.setIcon(carta4);
             ImagemCarta5.setIcon(carta5);
-            System.out.println("mesa tirou um " + MaoMesaNumero);
+            System.out.println("Mesa tirou um " + MaoMesaNumero);
 
             DisplayAposta.setText(String.valueOf("R$" + ValorAposta));
 
@@ -760,13 +763,13 @@ public class TelaInicial extends javax.swing.JFrame {
 
         Vegas.setIcon(Vegas_Baby_Gif);
 
-        iniciarjogo = false;
+        iniciarjogo = true;
 
     }//GEN-LAST:event_BotaoIniciarActionPerformed
 
     private void ReiniciarJogoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReiniciarJogoActionPerformed
 
-        iniciarjogo = true;
+        iniciarjogo = false;
         nomejogadorvalido = false;
 
         cartasjogador = 0;
@@ -781,7 +784,7 @@ public class TelaInicial extends javax.swing.JFrame {
         MaoJogadorNumero = 0;
         MaoMesaNumero = 0;
 
-       NomeJogador1.setText(String.valueOf(""));
+        NomeJogador1.setText(String.valueOf(""));
 
         for (int i = 0; i < baralho.length; i++) {
             baralho[i] = " ";
@@ -797,7 +800,7 @@ public class TelaInicial extends javax.swing.JFrame {
 
     private void PararJogadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PararJogadaActionPerformed
 
-        if (iniciarjogo == false) {
+        if (iniciarjogo == true) {
 
             while (MaoMesaNumero < 18 && cartasmaquina < 5) {
 
@@ -855,11 +858,46 @@ public class TelaInicial extends javax.swing.JFrame {
                             break;
                     }
                 } else {
-                    JOptionPane.showMessageDialog(null, "A maquina passou");
+                    JOptionPane.showMessageDialog(null, "A Mesa passou");
                 }
                 System.out.println("a maquina tem " + MaoMesaNumero);
 
-            }        // TODO add your handling code here:
+            }JOptionPane.showMessageDialog(null, "A Mesa parou de pedir carta");
+
+
+            if (MaoJogadorNumero > 21 && MaoMesaNumero <= 21) {
+                JOptionPane.showMessageDialog(null, "Você estourou com " + MaoJogadorNumero + " na mão");
+                ReiniciarJogoActionPerformed(evt);
+
+            }
+            if (MaoMesaNumero > 21 && MaoJogadorNumero <= 21) {
+                JOptionPane.showMessageDialog(null, "Você Ganhou, a Mesa estourou com " + MaoMesaNumero + " na mão. Você faturou R$" + ValorAposta);
+                ReiniciarJogoActionPerformed(evt);
+
+            }
+
+            if (MaoJogadorNumero == 21 && MaoMesaNumero < 21) {
+                JOptionPane.showMessageDialog(null, "Você GANHOU com " + MaoJogadorNumero + " na mão. Você faturou R$" + ValorAposta);
+
+            }
+            if (MaoMesaNumero == 21 && MaoJogadorNumero < 21) {
+                JOptionPane.showMessageDialog(null, "Você Perdeu com " + MaoJogadorNumero + " na mão e a mesa com " + MaoMesaNumero);
+
+            }
+
+            if (MaoMesaNumero == 21 && MaoJogadorNumero == 21) {
+                JOptionPane.showMessageDialog(null, "Ambos empataram com 21");
+
+            }
+
+            if (cartasjogador == 5) {
+                JOptionPane.showMessageDialog(null, "Você já tem 5 cartas");
+            }
+
+            if (cartasmaquina == 5) {
+
+                JOptionPane.showMessageDialog(null, "A Mesa já tem 5 cartas e aguarda sua jogada");
+            }// TODO add your handling code here:
     }//GEN-LAST:event_PararJogadaActionPerformed
     }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
