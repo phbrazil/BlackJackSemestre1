@@ -291,14 +291,12 @@ public class TelaInicial extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         OutraCarta = new javax.swing.JButton();
-        PassarJogada = new javax.swing.JButton();
+        PararJogada = new javax.swing.JButton();
         jLabel4Resultado = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         BotaoIniciar = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
         ReiniciarJogo = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
         ImagemCarta1 = new javax.swing.JLabel();
         ImagemCarta2 = new javax.swing.JLabel();
         ImagemCarta3 = new javax.swing.JLabel();
@@ -316,15 +314,17 @@ public class TelaInicial extends javax.swing.JFrame {
         setBackground(new java.awt.Color(10, 192, 156));
         getContentPane().setLayout(null);
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Carta 1");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(80, 280, 50, 14);
+        jLabel2.setBounds(80, 280, 50, 17);
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Carta 2");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(210, 280, 50, 14);
+        jLabel3.setBounds(210, 280, 50, 17);
 
         OutraCarta.setText("Outra Carta");
         OutraCarta.addActionListener(new java.awt.event.ActionListener() {
@@ -333,31 +333,34 @@ public class TelaInicial extends javax.swing.JFrame {
             }
         });
         getContentPane().add(OutraCarta);
-        OutraCarta.setBounds(610, 540, 100, 30);
+        OutraCarta.setBounds(610, 530, 100, 30);
 
-        PassarJogada.setText("Passar");
-        PassarJogada.addActionListener(new java.awt.event.ActionListener() {
+        PararJogada.setText("Parar");
+        PararJogada.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PassarJogadaActionPerformed(evt);
+                PararJogadaActionPerformed(evt);
             }
         });
-        getContentPane().add(PassarJogada);
-        PassarJogada.setBounds(70, 530, 90, 30);
+        getContentPane().add(PararJogada);
+        PararJogada.setBounds(610, 460, 100, 30);
 
-        jLabel4Resultado.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel4Resultado.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel4Resultado.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4Resultado.setText("Carta 3");
         getContentPane().add(jLabel4Resultado);
-        jLabel4Resultado.setBounds(370, 280, 50, 14);
+        jLabel4Resultado.setBounds(370, 280, 50, 17);
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Carta 4");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(530, 280, 50, 14);
+        jLabel4.setBounds(530, 280, 50, 17);
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Carta 5");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(660, 280, 50, 14);
+        jLabel5.setBounds(660, 280, 50, 17);
 
         BotaoIniciar.setText("Iniciar Jogo");
         BotaoIniciar.addActionListener(new java.awt.event.ActionListener() {
@@ -366,12 +369,7 @@ public class TelaInicial extends javax.swing.JFrame {
             }
         });
         getContentPane().add(BotaoIniciar);
-        BotaoIniciar.setBounds(60, 460, 110, 30);
-
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel6.setText("Jogador");
-        getContentPane().add(jLabel6);
-        jLabel6.setBounds(400, 450, 100, 20);
+        BotaoIniciar.setBounds(70, 460, 110, 30);
 
         ReiniciarJogo.setText("Reiniciar Jogo");
         ReiniciarJogo.addActionListener(new java.awt.event.ActionListener() {
@@ -380,12 +378,7 @@ public class TelaInicial extends javax.swing.JFrame {
             }
         });
         getContentPane().add(ReiniciarJogo);
-        ReiniciarJogo.setBounds(600, 470, 120, 30);
-
-        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel7.setText("Mão");
-        getContentPane().add(jLabel7);
-        jLabel7.setBounds(400, 510, 80, 30);
+        ReiniciarJogo.setBounds(660, 40, 120, 30);
         getContentPane().add(ImagemCarta1);
         ImagemCarta1.setBounds(50, 300, 120, 150);
         getContentPane().add(ImagemCarta2);
@@ -400,12 +393,14 @@ public class TelaInicial extends javax.swing.JFrame {
         Vegas.setBounds(110, 40, 570, 230);
 
         NomeJogador1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        NomeJogador1.setForeground(new java.awt.Color(255, 255, 255));
         getContentPane().add(NomeJogador1);
-        NomeJogador1.setBounds(360, 470, 150, 30);
+        NomeJogador1.setBounds(390, 460, 150, 30);
 
-        Status.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        Status.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        Status.setForeground(new java.awt.Color(255, 255, 255));
         getContentPane().add(Status);
-        Status.setBounds(370, 540, 130, 20);
+        Status.setBounds(370, 520, 190, 30);
 
         jButton1.setText("Subir Aposta");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -414,16 +409,18 @@ public class TelaInicial extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(210, 533, 110, 30);
+        jButton1.setBounds(70, 530, 110, 30);
 
-        DisplayAposta.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        DisplayAposta.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        DisplayAposta.setForeground(new java.awt.Color(255, 255, 255));
         getContentPane().add(DisplayAposta);
-        DisplayAposta.setBounds(220, 490, 80, 30);
+        DisplayAposta.setBounds(240, 490, 80, 30);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Valor Aposta");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(220, 460, 80, 20);
+        jLabel1.setBounds(230, 460, 120, 20);
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/InterfaceGrafica/background.jpg"))); // NOI18N
         jLabel8.setText("jLabel8");
@@ -574,11 +571,7 @@ public class TelaInicial extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Você Perdeu com " + MaoJogadorNumero + " na mão e a mesa com " + MaoMesaNumero);
 
         }
-
-        if (MaoMesaNumero == 21 && MaoJogadorNumero < 21) {
-            JOptionPane.showMessageDialog(null, "Você Perdeu com " + MaoJogadorNumero + " na mão e a mesa com " + MaoMesaNumero);
-
-        }
+        
         if (MaoMesaNumero == 21 && MaoJogadorNumero == 21) {
             JOptionPane.showMessageDialog(null, "Ambos empataram com 21");
 
@@ -606,7 +599,7 @@ public class TelaInicial extends javax.swing.JFrame {
                 if (Jogador1.equals("") || Jogador1.equals(" ") || Jogador1.equals("   ")) {
                     JOptionPane.showMessageDialog(null, "Nome do Jogador inválido");
                 } else {
-                    NomeJogador1.setText(String.valueOf(Jogador1));
+                    NomeJogador1.setText(String.valueOf("Jogador "+Jogador1));
                     nomejogadorvalido = true;
                 }
             }
@@ -795,11 +788,11 @@ public class TelaInicial extends javax.swing.JFrame {
 
     }//GEN-LAST:event_ReiniciarJogoActionPerformed
 
-    private void PassarJogadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PassarJogadaActionPerformed
+    private void PararJogadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PararJogadaActionPerformed
 
         if (iniciarjogo == false) {
 
-            if (MaoMesaNumero < 18 && cartasmaquina < 5) {
+            while(MaoMesaNumero < 18 && cartasmaquina < 5) {
 
                 maquinapedeoutra = mesa.nextInt(4) + 1;
 
@@ -860,7 +853,7 @@ public class TelaInicial extends javax.swing.JFrame {
                 System.out.println("a maquina tem " + MaoMesaNumero);
 
             }        // TODO add your handling code here:
-    }//GEN-LAST:event_PassarJogadaActionPerformed
+    }//GEN-LAST:event_PararJogadaActionPerformed
     }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
@@ -924,7 +917,7 @@ public class TelaInicial extends javax.swing.JFrame {
     private javax.swing.JLabel ImagemCarta5;
     private javax.swing.JLabel NomeJogador1;
     private javax.swing.JButton OutraCarta;
-    private javax.swing.JButton PassarJogada;
+    private javax.swing.JButton PararJogada;
     private javax.swing.JButton ReiniciarJogo;
     private javax.swing.JLabel Status;
     private javax.swing.JLabel Vegas;
@@ -935,8 +928,6 @@ public class TelaInicial extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel4Resultado;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     // End of variables declaration//GEN-END:variables
 }
